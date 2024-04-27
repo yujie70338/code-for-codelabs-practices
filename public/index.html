@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        />
+        <script
+            src="https://unpkg.com/htmx.org@1.9.10"
+            integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC"
+            crossorigin="anonymous"
+        ></script>
+
+        <link href="./output.css" rel="stylesheet" />
+        <title>Demo 1</title>
+    </head>
+    <body
+        class="font-sans bg-body-image bg-cover bg-center leading-relaxed"
+    >
+        <div class="container max-w-[700px] mt-[50px] ml-auto mr-auto">
+            <div class="hero flex items-center">                    
+                <div class="message text-base text-center mb-[24px]">
+                    <h1 class="text-2xl font-bold mb-[10px]">
+                        It's running!
+                    </h1>
+                    <div class="congrats text-base font-normal">
+                        Congratulations, you successfully deployed your
+                        service to Cloud Run. 
+                    </div>
+                </div>
+            </div>
+
+            <div class="details mb-[20px]">
+                <p>
+                    <div hx-trigger="load" hx-get="/helper" hx-swap="innerHTML" hx-target="this">Hello</div>                   
+                </p>
+            </div>
+
+            <p
+                class="callout text-sm text-blue-700 font-bold pt-4 pr-6 pb-4 pl-10 leading-tight"
+            >
+                You can deploy any container to Cloud Run that listens for
+                HTTP requests on the port defined by the
+                <code>PORT</code> environment variable. Cloud Run will
+                scale automatically based on requests and you never have to
+                worry about infrastructure.
+            </p>
+
+            <h1 class="text-2xl font-bold mt-[40px] mb-[20px]">
+                Persistent Storage Example using Firestore
+            </h1>
+            <div hx-target="this" hx-swap="outerHTML">
+                <p>
+                <div><label>Name</label>: Cloud</div>
+                </p><p>
+                <div><label>Town</label>: Nibelheim</div>
+                </p>
+                <div>
+                <button
+                    hx-get="/edit"
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-sm font-medium mt-[10px]"
+                >
+                    Click to update
+                </button>                
+                </div>
+            </div>
+
+            <h1 class="text-2xl font-bold mt-[40px] mb-[20px]">
+                What's next
+            </h1>
+            <p class="next text-base mt-4 mb-[20px]">
+                You can build this demo yourself!
+            </p>
+            <p class="cta">
+                <button
+                    class="bg-blue-500 text-white px-4 py-2 rounded-lg text-center text-sm font-medium"
+                >
+                    VIEW CODELAB
+                </button>
+            </p> 
+        </div>
+   </body>
+</html>
